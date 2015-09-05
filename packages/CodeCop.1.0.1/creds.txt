@@ -1,0 +1,9 @@
+getcodecop@gmail.com
+!1codecop
+
+@getcodecop
+!1codecop
+
+nuget
+CodeCop
+!1codecop

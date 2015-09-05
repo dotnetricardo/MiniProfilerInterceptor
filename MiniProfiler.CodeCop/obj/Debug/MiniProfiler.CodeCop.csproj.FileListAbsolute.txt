@@ -1,0 +1,12 @@
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\bin\Debug\MiniProfiler.CodeCop.dll
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\bin\Debug\MiniProfiler.CodeCop.pdb
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\bin\Debug\CodeCop.dll
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\bin\Debug\MiniProfiler.dll
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\bin\Debug\CodeCop.xml
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\bin\Debug\MiniProfiler.pdb
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\bin\Debug\MiniProfiler.xml
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\obj\Debug\MiniProfiler.CodeCop.dll
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\obj\Debug\MiniProfiler.CodeCop.pdb
+C:\Projects\Git\MiniProfiler.CodeCop\MiniProfiler.CodeCop\obj\Debug\MiniProfiler.CodeCop.csprojResolveAssemblyReference.cache

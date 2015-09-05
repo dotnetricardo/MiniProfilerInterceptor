@@ -1,0 +1,396 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CodeCop</name>
+    </assembly>
+    <members>
+        <member name="T:CodeCop.Core.Commands.OverriderCommand">
+            <summary>
+            The InterceptorCommand.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.Commands.OverriderCommand.Overriders">
+            <summary>
+            Gets the interceptors.
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Commands.OverriderCommand.AddOverriders(System.Collections.Generic.IEnumerable{CodeCop.Core.Contracts.ICopOverride})">
+            <summary>
+            The AddInterceptors.
+            </summary>
+            <param name="interceptors">
+            The interceptors.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            </exception>
+        </member>
+        <member name="T:CodeCop.Core.Commands.InterceptorCommand">
+            <summary>
+            The InterceptorCommand.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.Commands.InterceptorCommand.Interceptors">
+            <summary>
+            Gets the interceptors.
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Commands.InterceptorCommand.AddInterceptors(System.Collections.Generic.IEnumerable{CodeCop.Core.Contracts.ICopIntercept})">
+            <summary>
+            The AddInterceptors.
+            </summary>
+            <param name="interceptors">
+            The interceptors.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            </exception>
+        </member>
+        <member name="T:CodeCop.Core.Contracts.IExtractPropertyAttributesFromJsonFileCommand">
+            <summary>
+            The TypeExtractorFromJsonRewireCommand interface.
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.Contracts.IExtractTypeAttributesFromJsonFileCommand">
+            <summary>
+            The TypeExtractorFromJsonRewireCommand interface.
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.Contracts.ICopIntercept">
+            <summary>
+            To build and interceptor, implement this interface
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Contracts.ICopIntercept.OnBeforeExecute(CodeCop.Core.InterceptionContext)">
+            <summary>
+            Runs before the method execution
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:CodeCop.Core.Contracts.ICopIntercept.OnAfterExecute(CodeCop.Core.InterceptionContext)">
+            <summary>
+            Runs after the method execution
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CodeCop.Core.Contracts.ICopOverride">
+            <summary>
+            To override a method's behaviour your interceptors must implement this interface
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Contracts.ICopOverride.OnOverride(CodeCop.Core.InterceptionContext)">
+            <summary>
+            Runs instead of the original method behaviour
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CodeCop.Core.Contracts.IInterceptedMethodsProvider">
+            <summary>
+            The IInterceptorProvider interface.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.Contracts.IInterceptedMethodsProvider.InterceptedMethods">
+            <summary>
+            Gets or sets the Interceptors.
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.Contracts.IExtractTypesAndMethodsFromJsonFileCommand">
+            <summary>
+            The TypeExtractorFromJsonRewireCommand interface.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.Events.JsonFileReadResultEvent.JsonRewireFile">
+            <summary>
+            Gets the json file rewire.
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.Handlers.OverriderCommandHandler">
+            <summary>
+            The InterceptorCommandHandler handler.
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Handlers.OverriderCommandHandler.Handle(CodeCop.Core.Contracts.IOverriderCommand)">
+            <summary>
+            The handle.
+            </summary>
+            <param name="command">
+            The command.
+            </param>
+        </member>
+        <member name="T:CodeCop.Core.Handlers.JsonFileReadCommandHandler">
+            <summary>
+            The json command handler.
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Handlers.JsonFileReadCommandHandler.Handle(CodeCop.Core.Contracts.IJsonFileReadCommand)">
+            <summary>
+            The handle.
+            </summary>
+            <param name="command">
+            The command.
+            </param>
+            <exception cref="T:System.NotImplementedException">
+            </exception>
+        </member>
+        <member name="T:CodeCop.Core.Handlers.InterceptorCommandHandler">
+            <summary>
+            The InterceptorCommandHandler handler.
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Handlers.InterceptorCommandHandler.Handle(CodeCop.Core.Contracts.IInterceptorCommand)">
+            <summary>
+            The handle.
+            </summary>
+            <param name="command">
+            The command.
+            </param>
+        </member>
+        <member name="M:CodeCop.Core.Extensions.PublicMethodBaseExtensions.AsOriginal(System.Reflection.MethodBase)">
+            <summary>
+            Places the original, unintercepted version of the method bytes on the method again.
+            This operation is not thread-safe and locking mechanisms should be used on multi-threaded environments.
+            </summary>
+            <param name="mb"></param>
+            <returns>MethodBase</returns>
+        </member>
+        <member name="M:CodeCop.Core.Extensions.PublicMethodBaseExtensions.Restore(System.Reflection.MethodBase)">
+            <summary>
+            Restores the method bytes to the intercepted version.
+            This operation is not thread-safe and locking mechanisms should be used on multi-threaded environments.
+            </summary>
+            <param name="mb"></param>
+        </member>
+        <member name="M:CodeCop.Core.Helpers.JSONHelper.Parse``1(System.String)">
+            <summary>
+            The parse.
+            </summary>
+            <param name="pathToJSON">
+            The path to json.
+            </param>
+            <typeparam name="T">
+            </typeparam>
+            <returns>
+            The <see cref="!:T"/>.
+            </returns>
+        </member>
+        <member name="T:CodeCop.Core.Helpers.ReflectionHelper">
+            <summary>
+            The reflection helper.
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Helpers.ReflectionHelper.GetAppDomainAssemblies">
+            <summary>
+            The get app domain assemblies.
+            </summary>
+            <returns>
+            The <see cref="!:List"/>.
+            </returns>
+        </member>
+        <member name="M:CodeCop.Core.Helpers.ReflectionHelper.GetLoadedAssemblies">
+            <summary>
+            The get loaded assemblies.
+            </summary>
+            <returns>
+            The <see cref="!:List"/>.
+            </returns>
+        </member>
+        <member name="M:CodeCop.Core.Helpers.ReflectionHelper.GetAssembliesToLoadFromPath(System.String)">
+            <summary>
+            The get assemblies to load from path.
+            </summary>
+            <param name="path">
+            The path.
+            </param>
+            <returns>
+            The <see cref="!:List"/>.
+            </returns>
+        </member>
+        <member name="M:CodeCop.Core.Helpers.ReflectionHelper.GetAllMethodsForType(System.Type)">
+            <summary>
+            The get all methods for type.
+            </summary>
+            <param name="t">
+            The t.
+            </param>
+            <returns>
+            The <see cref="!:IEnumerable"/>.
+            </returns>
+        </member>
+        <member name="M:CodeCop.Core.Helpers.ReflectionHelper.GetMethods(System.Type)">
+            <summary>
+            The get methods.
+            </summary>
+            <param name="type">
+            The type.
+            </param>
+            <returns>
+            The <see cref="!:MethodInfo[]"/>.
+            </returns>
+        </member>
+        <member name="M:CodeCop.Core.Helpers.ReflectionHelper.GetMethod(System.Type,System.String)">
+            <summary>
+            The get method.
+            </summary>
+            <param name="type">
+            The type.
+            </param>
+            <param name="methodName">
+            The method name.
+            </param>
+            <returns>
+            The <see cref="T:System.Reflection.MethodInfo"/>.
+            </returns>
+        </member>
+        <member name="M:CodeCop.Core.Helpers.ReflectionHelper.GetMethodBase(System.Type,System.String,System.Type[])">
+            <summary>
+            The get method.
+            </summary>
+            <param name="type">
+            The type.
+            </param>
+            <param name="methodName">
+            The method name.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <returns>
+            The <see cref="T:System.Reflection.MethodInfo"/>.
+            </returns>
+        </member>
+        <member name="T:CodeCop.Core.Helpers.FileSystemHelper">
+            <summary>
+            The file system helper.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.Helpers.FileSystemHelper.BinPath">
+            <summary>
+            Gets the bin path.
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.InterceptedMethod">
+            <summary>
+            The base class for creating new Interceptors
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.InterceptionContext">
+            <summary>
+            The InterceptionContext class.
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.Providers.OverriderProvider">
+            <summary>
+            The InterceptorProvider.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.Providers.OverriderProvider.Overriders">
+            <summary>
+            Gets or sets the Interceptors.
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.Providers.InterceptorProvider">
+            <summary>
+            The InterceptorProvider.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.Providers.InterceptorProvider.Interceptors">
+            <summary>
+            Gets or sets the Interceptors.
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.Providers.InterceptedMethodsProvider">
+            <summary>
+            The InterceptorProvider.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.Providers.InterceptedMethodsProvider.InterceptedMethods">
+            <summary>
+            Gets or sets the Interceptors.
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.Cop">
+            <summary>
+            The Cop class is your entry point to {Code}Cop API
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Cop.Intercept(System.Collections.Generic.IEnumerable{CodeCop.Core.Contracts.ICopIntercept})">
+            <summary>
+            This method starts the internal method interception process.
+            It receives concrete interceptor instances as arguments, as declared on the copconfig.json file.
+            </summary>
+            <param name="interceptors">
+            The interceptors.
+            </param>
+        </member>
+        <member name="M:CodeCop.Core.Cop.Intercept">
+            <summary>
+            This method starts the internal method interception process.
+            It will automatically try to discover and instantiate interceptors on the solution.
+            Make sure all your interceptors have a default parameterless constructor or it will fail.
+            </summary>
+        </member>
+        <member name="T:CodeCop.Core.Messaging.InMemoryMessageQueue">
+            <summary>
+            The in memory message queue.
+            </summary>
+        </member>
+        <member name="F:CodeCop.Core.Messaging.InMemoryMessageQueue._messages">
+            <summary>
+            The _messages.
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Messaging.InMemoryMessageQueue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CodeCop.Core.Messaging.InMemoryMessageQueue"/> class.
+            </summary>
+        </member>
+        <member name="M:CodeCop.Core.Messaging.InMemoryMessageQueue.CodeCop#Core#Contracts#IMessageQueue#AddMessage(System.Guid,System.Object)">
+            <summary>
+            The add message.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+        </member>
+        <member name="M:CodeCop.Core.Messaging.InMemoryMessageQueue.CodeCop#Core#Contracts#IMessageQueue#GetMessage``1(System.Guid)">
+            <summary>
+            The get message.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+            <typeparam name="T">
+            </typeparam>
+            <returns>
+            The <see cref="!:T"/>.
+            </returns>
+        </member>
+        <member name="T:CodeCop.Core.JsonStructureForType">
+            <summary>
+            The json structure for rewired type.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.JsonStructureForType.TypeName">
+            <summary>
+            Gets or sets the type name.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.JsonStructureForType.Methods">
+            <summary>
+            Gets or sets the methods.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.JsonStructureForType.Attributes">
+            <summary>
+            Gets or sets the Attributes.
+            </summary>
+        </member>
+        <member name="P:CodeCop.Core.JsonStructureForType.GenericArgumentTypes">
+            <summary>
+            Gets or sets the GenericArgumentTypes.
+            </summary>
+        </member>
+    </members>
+</doc>
