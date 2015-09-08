@@ -51,7 +51,7 @@ If you want to use this Interceptor on just some methods, inside the copconfig.j
 
 }
 ```
-<b>Important: Don't forget these next steps for the MiniProfiler widget show up!</b>
+<b>Important: Don't forget these next steps for the MiniProfiler widget to show up!</b>
 
 1-Add MiniProfiler handler to web.config:
 ```
