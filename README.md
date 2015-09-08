@@ -51,14 +51,14 @@ If you want to use this Interceptor on just some methods, inside the copconfig.j
 
 }
 ```
-Don't forget these steap for the MiniProfiler widget show up
+<b>Don't forget these steap for the MiniProfiler widget show up</b>
 
 1-Add MiniProfiler handler to web.config:
 ```
 <system.webServer>
 ...
 <handlers>
-<add name="MiniProfiler" path="mini-profiler-resources/*" verb="*" type="System.Web.Routing.UrlRoutingModule" resourceType="Unspecified" preCondition="integratedMode" />
+    <add name="MiniProfiler" path="mini-profiler-resources/*" verb="*" type="System.Web.Routing.UrlRoutingModule" resourceType="Unspecified" preCondition="integratedMode" />
 </handlers>
 </system.webServer>
 ```
@@ -66,20 +66,20 @@ Don't forget these steap for the MiniProfiler widget show up
 2-Add the start and stop code for the profiler on Global.asax:
 ```
  protected void Application_BeginRequest()
-        {
-            if (Request.IsLocal)
-            {
-                StackExchange.Profiling.MiniProfiler.Start();
-            }
-        }
+ {
+    if (Request.IsLocal)
+    {
+        StackExchange.Profiling.MiniProfiler.Start();
+    }
+}
  
-        protected void Application_EndRequest()
-        {
-            if (Request.IsLocal)
-            {
-                StackExchange.Profiling.MiniProfiler.Stop();
-            }
-        }
+protected void Application_EndRequest()
+{
+    if (Request.IsLocal)
+    {
+        StackExchange.Profiling.MiniProfiler.Stop();
+    }
+}
 ```
 3-Add to _Layout.cshtml:
 ```
@@ -91,7 +91,7 @@ Don't forget these steap for the MiniProfiler widget show up
     </head>
     <body>
              …
-             @MiniProfiler.RenderIncludes()
+        @MiniProfiler.RenderIncludes()
     </body>
  
 </html>
